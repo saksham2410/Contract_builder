@@ -15,7 +15,7 @@ export default [
   },
   {
     path: '/buildcontract',
-    name: 'Table List',
+    name: 'Build Contract',
     view: 'BuildContract'
   },
   {
