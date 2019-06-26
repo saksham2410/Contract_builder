@@ -19,8 +19,8 @@
       &copy;
       {{ (new Date()).getFullYear() }}
       <a
-        href="https://www.creative-tim.com/"
-        target="_blank">Saksham Gupta</a>, made for
+        href="https://www.facebook.com/esaksham"
+        target="_blank">Saksham Gupta</a>, made with
       <v-icon
         color="tertiary"
         size="17">mdi-heart</v-icon>
@@ -34,9 +34,9 @@ export default {
   data: () => ({
     links: [
       { name: 'Home', Link: '/dashboard' },
-      { name: 'Saksham Gupta', Link: 'https://www.creative-tim.com' },
-      { name: 'About Zolo', Link: 'https://creative-tim.com/presentation' },
-      { name: 'Meow', Link: 'https://blog.creative-tim.com' }
+      { name: 'Saksham Gupta', Link: 'https://www.github.com/saksham2410' },
+      { name: 'About Zolo', Link: 'https://github.com/saksham2410' },
+      { name: 'Meow', Link: 'https://github.com' }
     ]
   })
 }

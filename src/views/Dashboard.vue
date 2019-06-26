@@ -121,7 +121,7 @@
           sub-icon-color="error"
           sub-text="Get More Space..."
           sub-text-color="text-primary" -->
-        />
+        <!-- /> -->
       </v-flex>
       <v-flex
         sm6
