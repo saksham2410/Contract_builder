@@ -1,6 +1,6 @@
 <template>
-  <v-container>
-    <v-layout align-start justify-start>
+  <v-container fill-height fluid>
+    <v-layout justify-center align-center>
       <v-flex v-for="(clause, i) in pushClause" :key="i">
         <v-flex v-for="(subclause, x) in clause" :key="x">
           {{subclause}}
@@ -41,6 +41,7 @@
     </v-layout>
   </v-container>
 </template>
+
 <script>
 import draggable from "vuedraggable";
 import axios from "axios";
@@ -110,3 +111,7 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+</style>
+

@@ -1,7 +1,7 @@
 <template>
-  <v-container>
-    <v-layout text-xs-center wrap>
-      Template ID : {{templateID}}
+  <v-container fill-height fluid grid-list-xl>
+    <v-layout justify-center wrap>
+       Template ID : {{templateID}}
       <v-card-text>
         <h4>Paste your Google Spreadsheet URL...</h4>
         <!-- <p>(<a href="https://docs.google.com/spreadsheets/d/1HFGm_cSH_XeZtxfREusftu-4S1LYZeAVSVjWMmsRHtY/copy" target="_blank">make a copy</a>)</p> -->
@@ -137,6 +137,3 @@ export default {
   }
 };
 </script>
-
-<style>
-</style>

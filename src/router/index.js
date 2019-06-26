@@ -1,36 +1,51 @@
+
 import Vue from 'vue'
+import VueAnalytics from 'vue-analytics'
 import Router from 'vue-router'
-import Home from '@/components/Home'
-import DisplayData from '@/components/DisplayData'
-import Draggable from '@/components/Draggable'
+import Meta from 'vue-meta'
+
+// Routes
+import paths from './paths'
+
+function route (path, view, name) {
+  return {
+    name: name || view,
+    path,
+    component: (resovle) => import(
+      `@/views/${view}.vue`
+    ).then(resovle)
+  }
+}
 
 Vue.use(Router)
 
-export default new Router({
-    routes: [
-        {
-            path: "/",
-            redirect: {
-                name: "Home"
-            }
-        },
-        {
-            path: '/home/',
-            name: 'Home',
-            props: true,
-            component: Home
-        },
-        {
-            path: '/drag/',
-            name: 'simple',
-            props: true,
-            component: Draggable
-        },
-        {
-            path: '/build/',
-            name: 'DisplayData',
-            props: true,
-            component: DisplayData
-        }
-    ]
+// Create a new router
+const router = new Router({
+  mode: 'history',
+  routes: paths.map(path => route(path.path, path.view, path.name)).concat([
+    { path: '*', redirect: '/dashboard' }
+  ]),
+  scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    }
+    if (to.hash) {
+      return { selector: to.hash }
+    }
+    return { x: 0, y: 0 }
+  }
 })
+
+Vue.use(Meta)
+
+if (process.env.GOOGLE_ANALYTICS) {
+  Vue.use(VueAnalytics, {
+    id: process.env.GOOGLE_ANALYTICS,
+    router,
+    autoTracking: {
+      page: process.env.NODE_ENV !== 'development'
+    }
+  })
+}
+
+export default router
