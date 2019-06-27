@@ -95,6 +95,6 @@ const createTableBasicAPI = tableName => {
 
 createTableBasicAPI("legalbase");
 createTableBasicAPI("headerdata");
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4203;
 app.listen(PORT);
 
